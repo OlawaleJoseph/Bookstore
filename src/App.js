@@ -1,6 +1,7 @@
 
-function App() {
-  return (
+import React from 'react';
+
+const App = () => (
     <div>
 
     <>
@@ -8,7 +9,6 @@ function App() {
     <BooksForm />
     </>
     </div>
-  );
-}
+);
 
 export default App;
