@@ -1,11 +1,13 @@
 
-import React from 'react';
-import ReactDOM from 'react-dom';function App() {
+import React from 'react'
+
+const App = () => {
   return (
     <div>
-    Hello
+      Bookstore App
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
+
