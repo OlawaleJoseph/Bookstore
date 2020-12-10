@@ -1,14 +1,13 @@
-
 import React from 'react';
 
 const App = () => (
-    <div>
+  <div>
 
     <>
-    <BooksList/>
-    <BooksForm />
+      <BooksList />
+      <BooksForm />
     </>
-    </div>
+  </div>
 );
 
 export default App;
