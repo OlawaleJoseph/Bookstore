@@ -1,13 +1,9 @@
+import React from 'react';
 
-import React from 'react'
+const App = () => (
+  <div>
+    Bookstore App
+  </div>
+);
 
-const App = () => {
-  return (
-    <div>
-      Bookstore App
-    </div>
-  )
-}
-
-export default App
-
+export default App;
