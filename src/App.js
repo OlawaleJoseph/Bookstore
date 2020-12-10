@@ -1,11 +1,9 @@
 import React from 'react';
 
-function App() {
-  return (
-    <div>
-      Hello
-    </div>
-  );
-}
+const App = () => (
+  <div>
+    Bookstore App
+  </div>
+);
 
 export default App;
