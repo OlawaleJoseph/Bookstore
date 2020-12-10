@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Book from '../components/Book';
 import { generateRandonNumber } from '../common';
 
 function BooksList({ books }) {
