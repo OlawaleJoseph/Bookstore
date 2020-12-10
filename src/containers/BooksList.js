@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Book from '../components/Book';
-import { generateRandonNumber } from '../common';
+import { generateRandomNumber } from '../common';
 
 function BooksList({ books }) {
-  const allBooks = books.map(book => <Book book={book} key={generateRandonNumber()} />);
+  const allBooks = books.map(book => <Book book={book} key={generateRandomNumber()} />);
   return (
     <table>
       <thead>
