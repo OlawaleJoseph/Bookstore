@@ -18,6 +18,7 @@ const BookForm = () => {
         <select name="category" id="category" placeholder="Category">
           {allCategories}
         </select>
+        <button type="submit">Add Book</button>
       </form>
     </div>
   );
