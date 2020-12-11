@@ -2,6 +2,10 @@ export const generateRandomNumber = (range = 10000) => Math.floor(Math.random() 
 
 export const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
 
+export const filterBooksByCategory = (books, param) => (
+  books.filter(({ category }) => category === param)
+);
+
 export const defaultBooks = [
   {
     id: generateRandomNumber(),

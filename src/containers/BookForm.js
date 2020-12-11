@@ -8,19 +8,18 @@ const initialValue = {
   title: '',
   author: '',
   category: '',
-}; const BookForm = ({ createBook }) => {
+};
+const BookForm = ({ createBook }) => {
   const [input, setInput] = useState(initialValue);
   const allCategories = categories.map(category => (
     <option
-      key={generateRandomNumber()}
-      value={category}
+      key={category}
     >
       {category}
     </option>
-  )); const handleChange = e => {
-    const { value } = e.target;
-    setInput({ ...input, [e.target.name]: value.toUpperCase() });
-  }; const validateInputError = () => {
+  ));
+  const handleChange = e => setInput({ ...input, [e.target.name]: e.target.value });
+  const validateInputError = () => {
     const { title, author, category } = input;
     let error = '';
     if (!title) {
@@ -35,7 +34,8 @@ const initialValue = {
       error = 'Category is required';
     }
     return error;
-  }; const handleSubmit = e => {
+  };
+  const handleSubmit = e => {
     e.preventDefault();
     const error = validateInputError();
     if (!error) {
@@ -44,21 +44,26 @@ const initialValue = {
     } else {
       document.querySelector('#error').textContent = error;
     }
-  }; return (
+  };
+  return (
     <div>
       <form onSubmit={handleSubmit}>
         <p id="error" />
         <input type="text" name="title" value={input.title} placeholder="Title" onChange={handleChange} />
         <input type="text" name="author" value={input.author} placeholder="Author" onChange={handleChange} />
-        <select name="category" value={input.category} id="category" placeholder="Category" onChange={handleChange}>
+        <select name="category" value={input.category} id="category" onChange={handleChange}>
+          <option value="" disabled hidden>Category</option>
           {allCategories}
         </select>
         <button type="submit">Add Book</button>
       </form>
     </div>
   );
-}; BookForm.propTypes = {
+};
+BookForm.propTypes = {
   createBook: PropTypes.func.isRequired,
-}; const mapDispatchToProps = dispatch => ({
+};
+const mapDispatchToProps = dispatch => ({
   createBook: book => dispatch(addBook(book)),
-}); export default connect(null, mapDispatchToProps)(BookForm);
+});
+export default connect(null, mapDispatchToProps)(BookForm);
