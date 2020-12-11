@@ -1,7 +1,36 @@
-export const generateRandomNumber = () => Math.floor(Math.random() * 1000);
-
-export const defaultBooks = [
-
-];
+export const generateRandomNumber = (range = 10000) => Math.floor(Math.random() * range);
 
 export const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
+
+export const defaultBooks = [
+  {
+    id: generateRandomNumber(),
+    title: 'ABSALOM, ABSALOM!',
+    author: 'WILLIAM FAULKNER',
+    category: categories[generateRandomNumber(categories.length)],
+  },
+  {
+    id: generateRandomNumber(),
+    title: 'A TIME TO KILL',
+    author: 'JOHN GRISHAM',
+    category: categories[generateRandomNumber(categories.length)],
+  },
+  {
+    id: generateRandomNumber(),
+    title: 'THE HOUSE OF MIRTH',
+    author: 'EDITH WHARTON',
+    category: categories[generateRandomNumber(categories.length)],
+  },
+  {
+    id: generateRandomNumber(),
+    title: 'EAST OF EDEN',
+    author: 'JOHN STEINBECK',
+    category: categories[generateRandomNumber(categories.length)],
+  },
+  {
+    id: generateRandomNumber(),
+    title: 'THE SUN ALSO RISES',
+    author: 'ERNEST HEMINGWAY',
+    category: categories[generateRandomNumber(categories.length)],
+  },
+];

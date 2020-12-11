@@ -12,7 +12,8 @@ function BooksList({ books }) {
         <tr>
           <th>ID</th>
           <th>Title</th>
-          <th>Categories</th>
+          <th>Author</th>
+          <th>Category</th>
         </tr>
       </thead>
       <tbody>

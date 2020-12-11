@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Book({ book }) {
-  const { id, title, category } = book;
+  const {
+    id, title, author, category,
+  } = book;
   return (
     <tr>
       <td>
@@ -10,6 +12,9 @@ function Book({ book }) {
       </td>
       <td>
         {title}
+      </td>
+      <td>
+        {author}
       </td>
       <td>
         {category}
@@ -22,6 +27,7 @@ Book.propTypes = {
   book: PropTypes.shape({
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
   }).isRequired,
 };
