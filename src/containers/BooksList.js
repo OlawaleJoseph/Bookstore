@@ -2,15 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Book from '../components/Book';
-import { generateRandomNumber } from '../common';
+import { generateRandomNumber, filterBooksByCategory } from '../common';
 import { removeBook, filterBooks } from '../actions';
 import Filter from '../components/categoryFilter';
 
-function BooksList({ books, deleteBook, filterBooks }) {
+const BooksList = ({
+  books, deleteBook, filterBooks, filterParam,
+}) => {
   const handleRemoveBook = id => deleteBook(id);
   const handleFilter = e => filterBooks(e.target.value);
 
-  const allBooks = books.map(book => (
+  const filteredBooks = filterParam === 'All' ? books : filterBooksByCategory(books, filterParam);
+
+  const allBooks = filteredBooks.map(book => (
     <Book
       id={generateRandomNumber()}
       handleRemoveBook={handleRemoveBook}
@@ -37,16 +41,18 @@ function BooksList({ books, deleteBook, filterBooks }) {
       </table>
     </div>
   );
-}
+};
 
 BooksList.propTypes = {
   books: PropTypes.arrayOf(PropTypes.object).isRequired,
   deleteBook: PropTypes.func.isRequired,
   filterBooks: PropTypes.func.isRequired,
+  filterParam: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = state => ({
   books: state.books,
+  filterParam: state.filter,
 });
 
 const mapDispatchToProps = dispatch => ({
