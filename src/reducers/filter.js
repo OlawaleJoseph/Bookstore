@@ -1,10 +1,9 @@
 import { FILTER_BOOK } from '../actions/type';
-import { defaultBooks } from '../common';
 
-export default (state = defaultBooks, { type, payload }) => {
+export default (state = 'All', { type, payload }) => {
   switch (type) {
     case FILTER_BOOK:
-      return state.filter(book => book.category === payload);
+      return payload;
     default:
       return state;
   }
