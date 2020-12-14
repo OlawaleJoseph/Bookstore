@@ -4,9 +4,9 @@ import { categories } from '../common';
 
 function CategoryFilter({ handleFilter }) {
   return (
-    <div>
-      <span>Filter By Category: </span>
-      <select name="categoryFilter" id="categoryFilter" onChange={handleFilter}>
+    <div className="d-flex align-items-center">
+      <span className="mr-3">Category: </span>
+      <select className="form-control" name="categoryFilter" id="categoryFilter" onChange={handleFilter}>
         {['All', ...categories].map(category => <option key={category}>{category}</option>)}
       </select>
     </div>

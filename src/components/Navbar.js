@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import CategoryFilter from './CategoryFilter';
 
 const NavBar = ({ handleFilter }) => (
-  <header className="bg-white py-2 mb-4">
-    <nav className="container d-flex justify-content-between">
+  <header className="bg-white py-4">
+    <nav className="d-flex justify-content-between container">
       <div className="d-flex align-items-center">
         <h3 className="text-primary font-weight-bold">Bookstore CMS</h3>
         <span className="text-secondary mx-5">Books</span>

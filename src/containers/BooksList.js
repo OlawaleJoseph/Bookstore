@@ -23,22 +23,11 @@ const BooksList = ({
     />
   ));
   return (
-    <div>
+    <div className="books-display">
       <Navbar handleFilter={handleFilter} />
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Category</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {allBooks}
-        </tbody>
-      </table>
+      <div className="container py-5">
+        {allBooks}
+      </div>
     </div>
   );
 };
