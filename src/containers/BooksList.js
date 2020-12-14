@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Book from '../components/Book';
+import Navbar from '../components/Navbar';
 import { generateRandomNumber, filterBooksByCategory } from '../common';
 import { removeBook, filterBooks } from '../actions';
-import Filter from '../components/categoryFilter';
 
 const BooksList = ({
   books, deleteBook, filterBooks, filterParam,
@@ -24,7 +24,7 @@ const BooksList = ({
   ));
   return (
     <div>
-      <Filter handleFilter={handleFilter} />
+      <Navbar handleFilter={handleFilter} />
       <table>
         <thead>
           <tr>

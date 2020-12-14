@@ -6,7 +6,7 @@ function Book({ book, handleRemoveBook }) {
     id, title, author, category,
   } = book;
   return (
-    <tr>
+    <tr className="text-primary">
       <td>
         {id}
       </td>
