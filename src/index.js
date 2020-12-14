@@ -5,6 +5,8 @@ import { Provider } from 'react-redux';
 import App from './App';
 import rootReducer from './reducers';
 
+import './index.scss';
+
 const store = createStore(
   rootReducer,
   // eslint-disable-next-line no-underscore-dangle

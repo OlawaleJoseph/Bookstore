@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Button } from 'react-bootstrap';
 import { addBook } from '../actions';
 import { categories, generateRandomNumber } from '../common';
 
@@ -39,6 +40,7 @@ const BookForm = ({ createBook }) => {
     e.preventDefault();
     const error = validateInputError();
     if (!error) {
+      document.querySelector('#error').textContent = '';
       createBook({ ...input, id: generateRandomNumber() });
       setInput(initialValue);
     } else {
@@ -46,16 +48,17 @@ const BookForm = ({ createBook }) => {
     }
   };
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <p id="error" />
-        <input type="text" name="title" value={input.title} placeholder="Title" onChange={handleChange} />
-        <input type="text" name="author" value={input.author} placeholder="Author" onChange={handleChange} />
-        <select name="category" value={input.category} id="category" onChange={handleChange}>
+    <div className="container">
+      <h3 className="form-title">ADD NEW BOOK</h3>
+      <p className="text-danger" id="error" />
+      <form className="d-flex" onSubmit={handleSubmit}>
+        <input className="form-control mr-2" type="text" name="title" value={input.title} placeholder="Title" onChange={handleChange} />
+        <input className="form-control mr-2" type="text" name="author" value={input.author} placeholder="Author" onChange={handleChange} />
+        <select className="form-control mr-2" name="category" value={input.category} id="category" onChange={handleChange}>
           <option value="" disabled hidden>Category</option>
           {allCategories}
         </select>
-        <button type="submit">Add Book</button>
+        <Button className="w-50" type="submit" variant="primary">Add Book</Button>
       </form>
     </div>
   );
